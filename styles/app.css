@@ -1,0 +1,48 @@
+html, body{
+    height:100%;
+    width: 100%;
+}
+
+#body-content {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#navigation-bar {
+    padding: 0;
+    margin: 0;
+}
+
+#content {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    padding-top: 51px;
+}
+
+#side-menu {
+    height: 100%;
+    width: 30%;
+    float: left;
+    background: #ffffff;
+}
+
+#map-container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgba(82, 82, 82, 0.15);
+}
+
+#map-canvas {
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.table-row-selected {
+    background-color: blue;
+}

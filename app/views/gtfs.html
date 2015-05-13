@@ -1,0 +1,56 @@
+<div id="side-menu">
+    {{ msg }}
+    <table border="1">
+        <caption>Agency</caption>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>url</td>
+            <td>timezone</td>
+            <td>lang</td>
+            <td>phone</td>
+            <td>fare_url</td>
+        </tr>
+        <tr ng-repeat="agency in agencies" ng-click="setSelectedAgency(agency)" ng-class="{'table-row-selected': agency==selectedAgency}">
+            <td>{{ agency.agency_id }}</td>
+            <td><input type="text" ng-model="agency.agency_name"></td>
+            <td>{{ agency.agency_url }}</td>
+            <td>{{ agency.agency_timezone }}</td>
+            <td>{{ agency.agency_lang }}</td>
+            <td>{{ agency.agency_phone }}</td>
+            <td>{{ agency.agency_fare_url }}</td>
+        </tr>
+    </table>
+
+    <table border="1">
+        <caption>Route</caption>
+        <tr>
+            <td>id</td>
+            <td>agency_id</td>
+            <td>short_name</td>
+            <td>long_name</td>
+            <td>desc</td>
+            <td>type</td>
+            <td>url</td>
+            <td>color</td>
+            <td>text_color</td>
+            <td>(default shape)</td>
+        </tr>
+
+        <tr ng-repeat="route in routes" ng-click="setSelectedRoute(route)" data-ng-class="{'table-row-selected': route==selectedRoute}">
+            <td>{{ route.route_id }}</td>
+            <td>{{ route.agency_id }}</td>
+            <td><input type="text" ng-model="route.route_short_name"></td>
+            <td>{{ route.route_long_name }}</td>
+            <td>{{ route.route_desc }}</td>
+            <td>{{ route.route_type }}</td>
+            <td>{{ route.route_url }}</td>
+            <td>{{ route.route_color }}</td>
+            <td>{{ route.route_text_color }}</td>
+        </tr>
+
+    </table>
+</div>
+<div class="container-fluid" id="map-container" ng-controller="mapController">
+    <div id="map-canvas"></div>
+</div>

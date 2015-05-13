@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>GTFS Creator</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="description" content="This is the content of description.">
+    <meta name="keywords" content="GTFS, Public Transport, Transport, Bus, Train, Google Maps, Public Data, Public, SkedGo">
+    <meta name="author" content="lamphanviet - http://lamphanviet.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="styles/vendors/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/vendors/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/app.css">
+
+    <script src="vendors/jquery-2.1.1.js"></script>
+    <script src="vendors/jquery-ui.js"></script>
+    <script src="vendors/angular.js"></script>
+    <script src="vendors/angular-route.js"></script>
+    <script src="vendors/bootstrap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+    <script src="app/app.js"></script>
+
+    <script src="app/controllers/aboutController.js"></script>
+    <script src="app/controllers/gtfsController.js"></script>
+    <script src="app/controllers/mainController.js"></script>
+    <script src="app/controllers/mapController.js"></script>
+
+    <script src="app/services/gtfsService.js"></script>
+
+
+    <script src="app/models/gtfs/agency.js"></script>
+    <script src="app/models/gtfs/stop.js"></script>
+    <script src="app/models/gtfs/route.js"></script>
+    <script src="app/models/gtfs/trip.js"></script>
+
+</head>
+<body ng-controller="mainController">
+<div class="container-fluid" id="body-content">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navigation-bar">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">GTFS Creator</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active:isActive('/home')}"><a href="#/home">Home</a></li>
+                    <li ng-class="{active:isActive('/gtfs')}"><a href="#/gtfs">GTFS</a></li>
+                    <li ng-class="{active:isActive('/about')}"><a href="#/about">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-class="navClass('about')"><a href="#/about">About</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div ng-view class="container-fluid" id="content">
+    </div>
+</div>
+</body>
+</html>
